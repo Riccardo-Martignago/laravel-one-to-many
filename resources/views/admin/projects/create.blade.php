@@ -22,6 +22,13 @@
                 <label for="description" class="form-label">Descrizione</label>
                 <input type="text" id="description" name="description" class="form-control" placeholder="Descrizione" aria-label="Description" value="{{ old('description') }}">
             </div>
+            <label for="type_id">Type</label>
+            <select name="type_id" id="type_id">
+                <option value="">Seleziona un tipo</option>
+                @foreach($types as $type)
+                    <option value="{{ $type->id }}">{{ $type->name }}</option>
+                @endforeach
+            </select>
             <button type="submit" class="btn btn-primary" value="Create project">Crea</button>
         </form>
     </section>
